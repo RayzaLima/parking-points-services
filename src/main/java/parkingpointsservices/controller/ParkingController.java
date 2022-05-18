@@ -1,4 +1,4 @@
-package parkingpointsservices.controler;
+package parkingpointsservices.controller;
 
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
