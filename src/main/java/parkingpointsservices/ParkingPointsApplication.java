@@ -15,7 +15,7 @@ public class ParkingPointsApplication {
 
 	@GetMapping("/hello")
 	public String index() {
-		return "Teste";
+		return "Teste de Conecxão com o Postman";
 	}
 
 }
