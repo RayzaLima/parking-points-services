@@ -6,21 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import parkingpointsservices.exception.UsuarioInexistenteException;
-import parkingpointsservices.model.CadastroUsuario;
+import parkingpointsservices.model.Usuario;
 import parkingpointsservices.service.persistence.PointsPersistence;
 
 @Service
 public class ParkingPointsLocalService {
 
-    public CadastroUsuario criarUsuario(CadastroUsuario cadastroUsuario) {
-        return pointsPersistence.save(cadastroUsuario);
+    public Usuario criarUsuario(Usuario usuario) {
+        return pointsPersistence.save(usuario);
     }
 
-    public CadastroUsuario buscarUsuarioPeloId(int id) throws UsuarioInexistenteException {
+    public Usuario buscarUsuarioPeloId(int id) throws UsuarioInexistenteException {
 
         try {
-            CadastroUsuario cadastroUsuario = pointsPersistence.findById(id).get();
-            return cadastroUsuario;
+            Usuario usuario = pointsPersistence.findById(id).get();
+            return usuario;
         } catch (NoSuchElementException e) {
             throw new UsuarioInexistenteException(String.format("Usuário Inexistente na Base", id));
         }
@@ -36,22 +36,23 @@ public class ParkingPointsLocalService {
         pointsPersistence.deleteById(id);
     }
 
-    public CadastroUsuario atualizarUsuario(int id, String nome, String email, String senha, int cpf, int telefone)
+    public Usuario atualizarUsuario(int id, String nome, String email, String senha, int cpf, int telefone)
             throws UsuarioInexistenteException {
 
         try {
-            CadastroUsuario cadastroUsuario = pointsPersistence.findById(id).get();
+            Usuario usuario = pointsPersistence.findById(id).get();
 
-            cadastroUsuario.setNome(nome);
-            cadastroUsuario.setEmail(email);
-            cadastroUsuario.setSenha(senha);
-            cadastroUsuario.setCpf(cpf);
-            cadastroUsuario.setTelefone(telefone);
+            usuario.setNome(nome);
+            usuario.setEmail(email);
+            usuario.setSenha(senha);
+            usuario.setCpf(cpf);
+            usuario.setTelefone(telefone);
 
-            pointsPersistence.save(cadastroUsuario);
-            return cadastroUsuario;
+            pointsPersistence.save(usuario);
+            return usuario;
         } catch (NoSuchElementException e) {
-            throw new UsuarioInexistenteException(String.format("Atualização não pode ser Executada, Usuário não encontrado", id));
+            throw new UsuarioInexistenteException(
+                    String.format("Atualização não pode ser Executada, Usuário não encontrado", id));
         }
     }
 

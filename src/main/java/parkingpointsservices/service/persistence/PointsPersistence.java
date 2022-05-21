@@ -1,9 +1,9 @@
 package parkingpointsservices.service.persistence;
-import parkingpointsservices.model.CadastroUsuario;
+import parkingpointsservices.model.Usuario;
 
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface PointsPersistence extends CrudRepository<CadastroUsuario, Integer>{
+public interface PointsPersistence extends CrudRepository<Usuario, Integer>{
     
 }

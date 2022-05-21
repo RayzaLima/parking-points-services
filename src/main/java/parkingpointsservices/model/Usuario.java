@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CadastroUsuario {
+public class Usuario {
 
     private int id;
     private String nome;
