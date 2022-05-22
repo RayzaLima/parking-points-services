@@ -5,42 +5,42 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import parkingpointsservices.exception.UsuarioInexistenteException;
+import parkingpointsservices.exception.UsuarioException;
 import parkingpointsservices.model.Usuario;
-import parkingpointsservices.service.persistence.PointsPersistence;
+import parkingpointsservices.service.persistence.UsuarioPersistence;
 
 @Service
-public class ParkingPointsLocalService {
+public class UsuarioLocalService {
 
     public Usuario criarUsuario(Usuario usuario) {
-        return pointsPersistence.save(usuario);
+        return usuarioPersistence.save(usuario);
     }
 
-    public Usuario buscarUsuarioPeloId(int id) throws UsuarioInexistenteException {
+    public Usuario buscarUsuarioPeloId(int id) throws UsuarioException {
 
         try {
-            Usuario usuario = pointsPersistence.findById(id).get();
+            Usuario usuario = usuarioPersistence.findById(id).get();
             return usuario;
         } catch (NoSuchElementException e) {
-            throw new UsuarioInexistenteException(String.format("Usuário Inexistente na Base", id));
+            throw new UsuarioException(String.format("Usuário Inexistente na Base", id));
         }
     }
 
-    public void deletarUsuario(int id) throws UsuarioInexistenteException {
+    public void deletarUsuario(int id) throws UsuarioException {
         try {
-            pointsPersistence.findById(id).get();
+            usuarioPersistence.findById(id).get();
         } catch (NoSuchElementException e) {
-            throw new UsuarioInexistenteException(String.format("Usuário Inexistente na Base", id));
+            throw new UsuarioException(String.format("Usuário Inexistente na Base", id));
         }
 
-        pointsPersistence.deleteById(id);
+        usuarioPersistence.deleteById(id);
     }
 
     public Usuario atualizarUsuario(int id, String nome, String email, String senha, int cpf, int telefone)
-            throws UsuarioInexistenteException {
+            throws UsuarioException {
 
         try {
-            Usuario usuario = pointsPersistence.findById(id).get();
+            Usuario usuario = usuarioPersistence.findById(id).get();
 
             usuario.setNome(nome);
             usuario.setEmail(email);
@@ -48,15 +48,15 @@ public class ParkingPointsLocalService {
             usuario.setCpf(cpf);
             usuario.setTelefone(telefone);
 
-            pointsPersistence.save(usuario);
+            usuarioPersistence.save(usuario);
             return usuario;
         } catch (NoSuchElementException e) {
-            throw new UsuarioInexistenteException(
+            throw new UsuarioException(
                     String.format("Atualização não pode ser Executada, Usuário não encontrado", id));
         }
     }
 
     @Autowired
-    private PointsPersistence pointsPersistence;
+    private UsuarioPersistence usuarioPersistence;
 
 }

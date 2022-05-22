@@ -4,6 +4,6 @@ import parkingpointsservices.model.Usuario;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface PointsPersistence extends CrudRepository<Usuario, Integer>{
+public interface UsuarioPersistence extends CrudRepository<Usuario, Integer>{
     
 }
