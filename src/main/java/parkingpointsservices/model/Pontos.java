@@ -20,6 +20,12 @@ public class Pontos {
     private int creditoPontos;
     private int debitoPontos;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    // Get's e Set's do cadastro de usuário
+    @Column(columnDefinition = "TEXT")
+
     public int getId() {
         return id;
     }

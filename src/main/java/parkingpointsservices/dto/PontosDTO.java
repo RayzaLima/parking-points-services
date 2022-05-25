@@ -8,7 +8,7 @@ public class PontosDTO {
     private int totalPontos;
     private Date dataAquisicaoPontos;
     private Date dataVencimentoPontos;
-    private int creditoPontos;
+    //private int creditoPontos;
     private int debitoPontos;
 
     public int getPontosCompras() {
@@ -43,13 +43,13 @@ public class PontosDTO {
         this.dataVencimentoPontos = dataVencimentoPontos;
     }
 
-    public int getCreditoPontos() {
+    /* public int getCreditoPontos() {
         return creditoPontos;
     }
 
     public void setCreditoPontos(int creditoPontos) {
         this.creditoPontos = creditoPontos;
-    }
+    } */
 
     public int getDebitoPontos() {
         return debitoPontos;

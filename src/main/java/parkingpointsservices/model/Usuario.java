@@ -16,7 +16,11 @@ public class Usuario {
     private int cpf;
     private int telefone;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     // Get's e Set's do cadastro de usuário
+    @Column(columnDefinition = "TEXT")
     public int getId() {
         return id;
     }
@@ -64,12 +68,5 @@ public class Usuario {
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
-
-    // Garante que será chave primária - só vai existir 01
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
-    @Column(columnDefinition = "TEXT")
-    private String texto;
 
 }
