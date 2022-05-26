@@ -4,12 +4,21 @@ import java.util.Date;
 
 public class PontosDTO {
 
+    private int id;
     private int pontosCompras;
     private int totalPontos;
     private Date dataAquisicaoPontos;
     private Date dataVencimentoPontos;
     //private int creditoPontos;
     private int debitoPontos;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPontosCompras() {
         return pontosCompras;
