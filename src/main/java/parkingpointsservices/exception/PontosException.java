@@ -2,8 +2,9 @@ package parkingpointsservices.exception;
 
 public class PontosException extends Exception {
 
-    public PontosException(String mensagem) {
+	private static final long serialVersionUID = -4323483433519344851L;
+
+	public PontosException(String mensagem) {
         super(mensagem);
     }
-
 }
