@@ -2,7 +2,9 @@ package parkingpointsservices.exception;
 
 public class CartaoException  extends Exception{
     
-    public CartaoException(String mensagem) {
+	private static final long serialVersionUID = -631196487021712994L;
+
+	public CartaoException(String mensagem) {
         super(mensagem);
     }
 }
