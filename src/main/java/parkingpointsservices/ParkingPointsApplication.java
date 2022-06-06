@@ -9,4 +9,6 @@ public class ParkingPointsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ParkingPointsApplication.class, args);
 	}
+	
+//	teste
 }
