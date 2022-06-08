@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "a4b37007-838f-4dfe-b255-45f7dada2a85",
+		"name": "Parking Points",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste1\",\r\n    \"email\": \"teste1@gmail.com\",\r\n    \"senha\": \"teste123\",\r\n    \"cpf\": 13456789,\r\n    \"telefone\": 999290\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Usuários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Usuário ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Usuário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste12\",\r\n    \"email\": \"teste12@gmail.com\",\r\n    \"senha\": \"teste1235\",\r\n    \"cpf\": 13456789,\r\n    \"telefone\": 9992904\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Pontos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/pontos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"pontos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Pontos ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/pontos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"pontos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Pontos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"totalPontos\": 2000,\r\n    \"pontosCompras\": 100,\r\n    \"dataAquisicaoPontos\": \"2019-04-19\", \r\n    \"dataVencimentoPontos\": \"2022-04-19\", \r\n    \"creditoPontos\": 150,\r\n    \"debitoPontos\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/pontos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"pontos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Pontos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"totalPontos\": 2000,\r\n    \"pontosCompras\": 100,\r\n    \"dataAquisicaoPontos\": \"2020-10-15\", \r\n    \"dataVencimentoPontos\": \"2022-10-15\", \r\n    \"creditoPontos\": 150,\r\n    \"debitoPontos\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/pontos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"pontos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Pontos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingpoints/pontos/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingpoints",
+						"pontos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
