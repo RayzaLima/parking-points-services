@@ -33,9 +33,9 @@ public class UsuarioController {
     }
     
     @GetMapping
-    public ResponseEntity<List<Usuario>> buscarTodos() {
+    public ResponseEntity<List<Usuario>> buscarTodosUsuarios() {
     	
-		List<Usuario> usuarios = service.buscarTodos();
+		List<Usuario> usuarios = service.buscarTodosUsuarios();
 		
         if (usuarios.isEmpty())
         	return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -44,9 +44,9 @@ public class UsuarioController {
     }
     
     @GetMapping({"/{id}"})
-    public ResponseEntity<Usuario> buscarPeloId(@PathVariable int id) {
+    public ResponseEntity<Usuario> buscarUsuariosPeloId(@PathVariable int id) {
     	
-    	Optional<Usuario> usuario = service.buscarPeloId(id);
+    	Optional<Usuario> usuario = service.buscarUsuariosPeloId(id);
     	
     	if(usuario.isPresent())    		
     		return new ResponseEntity<>(usuario.get(), HttpStatus.OK);
@@ -57,7 +57,7 @@ public class UsuarioController {
     @PutMapping("/{id}")
     public ResponseEntity<?> atualizar(@PathVariable("id") int id, @RequestBody Usuario usuarioAtualizado) {
     	
-        Optional<Usuario> usuario = service.buscarPeloId(id);
+        Optional<Usuario> usuario = service.buscarUsuariosPeloId(id);
         
         if(usuario.isPresent()){
             service.atualizar(usuario.get(), usuarioAtualizado);
@@ -70,10 +70,10 @@ public class UsuarioController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> deletar(@PathVariable("id") int id) {
     	
-    	Optional<Usuario> usuario = service.buscarPeloId(id);
+    	Optional<Usuario> usuario = service.buscarUsuariosPeloId(id);
         
     	if(usuario.isPresent()){
-    		service.deletar(id);
+    		service.deletarUsuario(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
         else

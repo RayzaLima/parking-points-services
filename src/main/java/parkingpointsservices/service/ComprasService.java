@@ -20,7 +20,7 @@ public class ComprasService {
 		return comprasPersistence.save(compras);
 	}
 	
-	public Optional<Compras> buscarPeloId(int id) {
+	public Optional<Compras> buscarComprasPeloId(int id) {
 		return comprasPersistence.findById(id);
 	}
 	

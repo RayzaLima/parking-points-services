@@ -20,17 +20,17 @@ public class UsuarioService {
         return usuarioPersistence.save(usuario);
     }
 
-    public Optional<Usuario> buscarPeloId(int id) {
+    public Optional<Usuario> buscarUsuariosPeloId(int id) {
     	return usuarioPersistence.findById(id);
     }
     
-    public List<Usuario> buscarTodos() {
+    public List<Usuario> buscarTodosUsuarios() {
     	List<Usuario> usuarios = new ArrayList<>();
     	usuarioPersistence.findAll().forEach(usuarios::add);
     	return usuarios;
     }
 
-    public void deletar(int id) {
+    public void deletarUsuario(int id) {
     	usuarioPersistence.deleteById(id);
     }
 
