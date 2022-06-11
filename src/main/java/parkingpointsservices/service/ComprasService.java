@@ -1,10 +1,10 @@
 package parkingpointsservices.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import parkingpointsservices.model.Compras;
@@ -24,10 +24,8 @@ public class ComprasService {
 		return comprasPersistence.findById(id);
 	}
 	
-	public List<Compras> buscarTodasCompras() {
-		List<Compras> compras = new ArrayList<>();
-		comprasPersistence.findAll().forEach(compras::add);
-		return compras;
+	public Page<Compras> buscarTodasCompras(Pageable paging) {
+		return comprasPersistence.findAll(paging);
 	}
 	
 	public void deletarCompras(int id) {
