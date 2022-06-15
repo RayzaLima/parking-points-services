@@ -22,13 +22,5 @@ public class PontosHelper {
 
     /* public static void deletarPontosVencidos(int id) {
         
-        Pontos pontosVencidos = new Pontos();
-        int dataLimite = 365;
-
-        for (Pontos pv : pontosVencidos) {
-            if (pv.getDataAquisicaoPontos() = dataLimite) {
-                pv.delete();
-            }
-        }
     } */
 }
